@@ -3,19 +3,19 @@ package com.github.andreendo.salat;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
-import org.junit.Test;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 /**
  *
- * @author andreendo
+ * @author Andressa
  */
-public class WebTesterTest {
+public class Test {
     
-    private WebDriver webDriver;
+private WebDriver webDriver;
     
     @BeforeClass
     public static void beforeClass() {
@@ -34,12 +34,10 @@ public class WebTesterTest {
         webDriver.close();
     }    
     
-    @Test
+    @org.junit.Test
     public void test01() {
-        Driver driver = new WebAppDriver(webDriver, "http://www.crunchyroll.com/", "crunchyroll.com/");       
-        //Driver driver = new WebAppDriver(webDriver, "https://www.wikipedia.org/", "wikipedia.org");   
-        //Driver driver = new WebAppDriver(webDriver, "http://localhost:8080", "localhost:8080");       
-        //Driver driver = new WebAppDriver(webDriver, "http://demo.redmine.org", "demo.redmine.org");       
+        Driver driver = new WebAppDriver(webDriver, "http://www.crunchyroll.com/", "crunchyroll.com");       
+ 
         
         StopCondition stopCondition = new CounterStopCondition(200);
         Tester tester = new Tester(driver, stopCondition, new Random());
